@@ -19,8 +19,11 @@ fonte = pygame.font.SysFont(None, tamanho_fonte)
 texto = fonte.render("Thiago", True, BRANCO)
 #texto_rect = texto.get_rect(center=(largura/2, altura/2)) #Centro
 #texto_rect = texto.get_rect(center=(largura/2, 25)) #Topo
-#texto_rect = texto.get_rect(center=(largura/13, 25)) #Canto Superior Esquerdo
-texto_rect = texto.get_rect(center=(745, 25))
+#texto_rect = texto.get_rect(center=(65, 25)) #Canto Superior Esquerdo
+#texto_rect = texto.get_rect(center=(735, 25)) #Canto Superior Direito
+#texto_rect = texto.get_rect(center=(65, 575)) #Canto Inferior Esquerdo
+#texto_rect = texto.get_rect(center=(largura/2, 575)) #Base
+texto_rect = texto.get_rect(center=(735, 575))
 
 #Loop principal
 while True:
