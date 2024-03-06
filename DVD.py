@@ -2,21 +2,22 @@ import sys
 import pygame
 import random   #Pegando um pacote
 
+# Inicializa o Pygame
 pygame.init()
 
 #Configuração da tela
 largura = 800
 altura = 600
-
 tela = pygame.display.set_mode((largura, altura))
 pygame.display.set_caption("Pygame")
 
+# Define as cores
 PRETO = (0, 0, 0)
 BRANCO = (255, 255, 255)
-VERMELHO = (255, 0, 0)
-AZUL = (0, 0, 255)
-AMARELO = (255, 255, 0)
-VERDE = (0, 255, 0)
+#VERMELHO = (255, 0, 0)
+#AZUL = (0, 0, 255)
+#AMARELO = (255, 255, 0)
+#VERDE = (0, 255, 0)
 
 tamanho_fonte = 50
 fonte = pygame.font.SysFont(None, tamanho_fonte)
@@ -74,33 +75,45 @@ while True:
     
     texto_rect.y += velocidade_y
 
+    # Verifica se o texto atinge as bordas da tela
     #if texto_rect.right >= largura or texto_rect.left <= 0:
     if texto_rect.right >= largura:
        #velocidade_x = -velocidade_x
-       velocidade_x = random.randint(-1, 1)
+       velocidade_x = random.randint(-1, 0)
        velocidade_y = random.randint(-1, 1)
-       texto = fonte.render("Thiago", True, VERMELHO)
+       cor_texto = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+       texto = fonte.render("Thiago", True, cor_texto)
 
     #if texto_rect.bottom >= altura or texto_rect.top <= 0:
     if texto_rect.bottom >= altura:
         #velocidade_y = -velocidade_y
         velocidade_x = random.randint(-1, 1)
-        velocidade_y = random.randint(-1, 1)
-        texto = fonte.render("Thiago", True, AZUL)
+        velocidade_y = random.randint(-1, 0)
+        cor_texto = (random.randint(0, 255),                # random.randint(0, 255     Sorteia as cores quando
+                     random.randint(0, 255),                # random.randint(0, 255     bate nos cantos
+                     random.randint(0, 255))                # random.randint(0, 255
+        texto = fonte.render("Thiago", True, cor_texto)
     
     if texto_rect.top <= 0:
         #velocidade_y = -velocidade_y
         velocidade_x = random.randint(-1, 1)
-        velocidade_y = random.randint(-1, 1)
-        texto = fonte.render("Thiago", True, AMARELO)
+        velocidade_y = random.randint(0, 1)
+        cor_texto = (random.randint(0, 255), 
+                     random.randint(0, 255), 
+                     random.randint(0, 255))
+        texto = fonte.render("Thiago", True, cor_texto)
 
     if texto_rect.left <= 0:
         #velocidade_x = -velocidade_x
-        velocidade_x = random.randint(-1, 1)
+        velocidade_x = random.randint(0, 1)
         velocidade_y = random.randint(-1, 1)
-        texto = fonte.render("Thiago", True, VERDE)
+        cor_texto = (random.randint(0, 255), 
+                     random.randint(0, 255), 
+                     random.randint(0, 255))
+        texto = fonte.render("Thiago", True, cor_texto)
 
-    clock.tick(300) #Definindo FPS
+    clock.tick(700) #Definindo FPS
     tela.fill(PRETO)
     tela.blit(texto, texto_rect)
     pygame.display.flip()
+
