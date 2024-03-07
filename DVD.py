@@ -5,7 +5,7 @@ import random   #Pegando um pacote
 # Inicializa o Pygame
 pygame.init()
 
-#Configuração da tela
+# Configuração da tela
 largura = 800
 altura = 600
 tela = pygame.display.set_mode((largura, altura))
@@ -41,14 +41,15 @@ v_y = 0
 velocidade_x = random.randint(-1, 1)  #Para o nome sair aleatoriamente - Entre 1, 0 e -1
 velocidade_y = random.randint(-1, 1)  #Função (randint)
 
+# Garantir que a velocidade não seja zero
 while velocidade_x == 0:        #Enquanto tiver rodando zero, vai rodar de novo
     velocidade_x = random.randint(-1, 1)
 while velocidade_y == 0:        #Enquanto tiver rodando zero, vai rodar de novo
     velocidade_y = random.randint(-1, 1)
                                 #Quando rodar e não sair zero, ele vai pro LOOP PRINCIPAL
 
-#A renderização da tela começa do lado esquerdo para o direito
-#Para posicionar o retângulo invísivel no ponto inicial do lado esquerdo, ao invés de posicionar o retângulo 
+# A renderização da tela começa do lado esquerdo para o direito
+# Para posicionar o retângulo invísivel no ponto inicial do lado esquerdo, ao invés de posicionar o retângulo 
 #invísivel no centro, sem ter que ficar modificando a cordenada (largura e altura), como nos comandos acima
 
 #texto_rect = texto.get_rect()  #O get ele pega o referência, cria o objeto
@@ -64,7 +65,7 @@ while velocidade_y == 0:        #Enquanto tiver rodando zero, vai rodar de novo
 #texto_rect.right = 800 #Canto superior direito
 #texto_rect.top = 0
 
-#Loop principal
+# Loop principal
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
