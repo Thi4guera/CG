@@ -4,9 +4,9 @@ import random
 class MovendoTexto:     # <- Criação de uma classe, obrigatoriamente precisa de __ dois underlines
     def __init__(self, texto, fonte_tamanho, largura, altura):          # def = Métodos
         self.fonte = pygame.font.SysFont(None, fonte_tamanho)
-        self.texto = texto                                  # Self = Atributos/Parâmetros
-        self.largura = largura          
-        self.altura = altura
+        self.texto = texto         # Texto da Janela                         # Self = Atributos/Parâmetros
+        self.largura = largura     # Largura da Janela     
+        self.altura = altura       # Altura da Janela 
         # self.font.render(texto, True, (255,255,255)) atribuído a variável = self.text_surf
         self.texto_surf = self.fonte.render(texto, True, (255,255,255))  
         self.rect = self.texto_surf.get_rect(center=(largura/2, altura/2))
@@ -42,14 +42,14 @@ class MovendoTexto:     # <- Criação de uma classe, obrigatoriamente precisa d
 
         if self.rect.bottom >= self.altura:
             self.velocidade_x = random.randint(-1, 1)
-            self.velocidade_y = random.randint(-1, 1)
+            self.velocidade_y = random.randint(-1, 0)
             self.change_color()
 
     def change_color(self):
         cor_texto = (
         random.randint(0, 255), 
         random.randint(0, 255), 
-        random.randint(0, 255)
+        random.randint(0, 255),
     )
         self.texto_surf = self.fonte.render(self.texto, True, cor_texto)
 
