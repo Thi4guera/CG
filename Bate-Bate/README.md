@@ -7,6 +7,6 @@ Projeto foi divido em três etapas: Mecânica de Movimento, Main e Game. Cada pa
 
 <div align=center>
 
-<img heigh="200em" srv".img/Diagrama-UML-Bate-Bate.jpg">
+<img heigh="200em" srv"./img/Diagrama-UML-Bate-Bate.jpg">
 
 </div>
