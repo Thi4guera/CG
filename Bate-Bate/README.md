@@ -10,3 +10,5 @@ Projeto foi divido em três etapas: Mecânica de Movimento, Main e Game. Cada pa
 <img height="200em" src="./img/diagrama.jpg">
 
 </div>
+========================================
+
