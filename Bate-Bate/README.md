@@ -59,6 +59,7 @@ self.clock: Define o objeto clock que controla a taxa de quadros do game
 self.MovendoTexto: Cria um objeto da classe MovendoTexto e passa as características da classe para o objeto criado.
 
 Métodos:
+
 __init__: Construtor da classe Game, inicializa os atributos.
 
 run: Este método executa o jogo, deixando em um loop, movendo o texto na tela, até que o usuário feche a janela.
