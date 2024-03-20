@@ -56,9 +56,9 @@ self.tela: Define a criação da tela com a dimensões especificadas, com 600 de
 
 self.clock: Define o objeto clock que controla a taxa de quadros do game
 
-self.MovText: Cria um objeto da classe MovendoTexto e passa as características da classe para o objeto criado.
+self.MovendoTexto: Cria um objeto da classe MovendoTexto e passa as características da classe para o objeto criado.
 
-Métodos.
+Métodos:
 __init__: Construtor da classe Game, inicializa os atributos.
 
 run: Este método executa o jogo, deixando em um loop, movendo o texto na tela, até que o usuário feche a janela.
