@@ -17,6 +17,10 @@ Arquivo MecMovimento.py
 Atributos:
 
 self.fonte: Define a fonte do texto, o tipo, tamanho e estilo que vai aparecer para o usuário
+
 self.texto: Define o texto que será exibido na tela
-self.altura: Define a altura da janela 
+
+self.largura: Define a largura da janela 
+
+self.altura: Define a altura da janela
 
