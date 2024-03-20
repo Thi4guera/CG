@@ -3,7 +3,7 @@ import random
 
 class MovendoTexto:     # <- Criação de uma classe, obrigatoriamente precisa de __ dois underlines
     def __init__(self, texto, fonte_tamanho, largura, altura):          # def = Métodos
-        self.fonte = pygame.font.SysFont(None, fonte_tamanho)
+        self.fonte = pygame.font.SysFont(None, fonte_tamanho)   # Define o tipo da fonte, o tamanho e o estilo
         self.texto = texto         # Define o texto da Janela                         # Self = Atributos/Parâmetros
         self.largura = largura     # Define a largura da Janela     
         self.altura = altura       # Define a altura da Janela 
