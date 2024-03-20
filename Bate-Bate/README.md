@@ -1,18 +1,18 @@
-Projeto Bate-Bate baseado no display do DVD
+Projeto Bate-Bate baseado no display do DVD movendo um texto de forma aleatória batendo sobre os cantos e trocando de dor aleatoriamente.
 
-Projeto foi divido em três etapas: Mecânica de Movimento, Main e Game. Cada parte possui seus respectivos "Atributos" e "Métodos"
+O Projeto foi divido em três etapas: Mecânica de Movimento, Main e Game. Cada parte possui seus respectivos "Atributos" e "Métodos".
 
 ========================================
 <h1>Diagrama UML<h1>
 
 <div align=center>
 
-<img height="200em" src="./img/diagrama.jpg">
+<img height="200em" src="./img/diagrama.png">
 
 </div>
 ========================================
 
-Arquivo MecMovimento.py / Classe MovendoTexto
+Primeira Etapa - Arquivo MecMovimento.py / Classe MovendoTexto
 
 Atributos:
 
@@ -44,7 +44,7 @@ def change_color: Gera uma cor aleatória e atribuí ela no texto
 
 ========================================
 
-Arquivo Game.py
+Segunda Etapa - Arquivo Game.py
 
 Atributos:
 
@@ -65,6 +65,6 @@ run: Este método executa o jogo, deixando em um loop, movendo o texto na tela, 
 
 ========================================
 
-Arquivo Main.py
+Terceira Etapa - Arquivo Main.py
 
 Cria uma instância da classe Game e chama o método run() para iniciar a execução do jogo.
