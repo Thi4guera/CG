@@ -24,3 +24,20 @@ self.largura: Define a largura da janela
 
 self.altura: Define a altura da janela
 
+self.texto_surf: Define a superfície e renderiza o texto na tela
+
+self.rect: Define a área em que o texto aparecerá em forma de retângulo usando como base a largura e altura, trazendo centralizado
+
+self.velocidade_x: Define uma variável com a velocidade inicial aleatoriamente não nula na horizontal do jogo
+
+self.velocidade_y: Define uma variável com a velocidade inicial aleatoriamente não nula na vertifcal do jogo
+
+Métodos:
+
+__init__: Método de criação da classe, inicializa todos os atributos
+
+def gerar_numero_nao_zero: Gera um número aleatório não nulo
+
+def move: Move o texto na tela e atualiza as coordenadas do retângulo do texto com base nas velocidades
+
+def change_color: Gera uma cor aleatória e atribuí ela no texto
