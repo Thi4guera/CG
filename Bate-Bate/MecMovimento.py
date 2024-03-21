@@ -9,7 +9,7 @@ class MovendoTexto:     # <- Criação de uma classe, obrigatoriamente precisa d
         self.altura = altura       # Define a altura da Janela 
         # self.font.render(texto, True, (255,255,255)) atribuído a variável = self.text_surf
         self.texto_surf = self.fonte.render(texto, True, (255,255,255))     # Renderiza o texto na tela
-        self.rect = self.texto_surf.get_rect(center=(largura/2, altura/2))  # Trás o retângulo envolta do texto centralizado 
+        self.rect = self.texto_surf.get_rect(center=(largura/2, altura/2))  # Cria um retângulo envolta do texto centralizado 
 
         # Variáveis definidas com as velocidades iniciais aleatoriamente não nulas
         self.velocidade_x = self.gerar_numero_nao_zero()
@@ -41,7 +41,7 @@ class MovendoTexto:     # <- Criação de uma classe, obrigatoriamente precisa d
             self.velocidade_y = random.randint(0, 1)
             self.change_color()
 
-        if self.rect.bottom >= self.altura:
+        if self.rect.bottom >= self.altura:                 # Se o texto bater embaixo, ele entra nessa condicional
             self.velocidade_x = random.randint(-1, 1)
             self.velocidade_y = random.randint(-1, 0)
             self.change_color()

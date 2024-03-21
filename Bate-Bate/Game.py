@@ -3,7 +3,7 @@ import sys
 from MecMovimento import MovendoTexto           # from = olha o arquivo MecMovimento e importa a Classe MovendoTexto
 
 class Game:
-    def __init__(self):
+    def __init__(self):             # Self signica que é dele mesmo
         pygame.init()
         self.largura = 800          # Define a largura da tela do game
         self.altura = 600           # Define a altura da tela do game
@@ -17,7 +17,7 @@ class Game:
         rodando = True  # Variável rodando como True, mostrando que o game está em execução
         while rodando:  # Início do loop enquanto o game está em execução
             for evento in pygame.event.get():   
-                if evento.type == pygame.QUIT:  # # Verifica se o evento é de fechar a janela
+                if evento.type == pygame.QUIT:  # Verifica se o evento é de fechar a janela
                     rodando = False     # Variável rodando como False para sair do jogo
                 
             self.MovendoTexto.move()    # Roda a função move da classe MovendoTexto
