@@ -38,15 +38,48 @@ raquete_pc_dy = 5
 velocidade_bola_x = 5
 velocidade_bola_y = 2
 
-
 # Define o Score
 score_player_1 = 0
 score_pc = 0
 
+# Configuração da fonte
+font_file = "Pong-Maluco/font/PressStart2P-Regular.ttf"
+font = pygame.font.Font(font_file, 24)  # Nessa variável font foi 
+ 
 clock = pygame.time.Clock()
 
+rodando = False
+
+def menu_principal():                               # def = função -> ela só entende as variáveis que estão dentro dela
+    global rodando
+    while True:                                     # loop infinito
+        for event in pygame.event.get():            # ouvindo os eventos
+            if event.type == pygame.QUIT:           # se clicar no x
+                pygame.quit()                       # sair
+                sys.exit()
+            elif event.type == pygame.KEYDOWN:      # se não, uma função no teclado
+                if event.key == pygame.K_SPACE:     #vai retornar
+                    rodando = True
+                    return
+                
+        # Renderiza o texto do menu
+        screen.fill(PRETO)
+        texto_menu = font.render("Pong", True, BRANCO)
+        text_menu_rect = texto_menu.get_rect(center=(largura // 2, altura // 2))
+        screen.blit(texto_menu, text_menu_rect)
+
+        tempo = pygame.time.get_ticks() # Conta os milisegundos quando inicia o pygame
+        # Pressione Espaço para jogar
+        if tempo % 2000 < 1000:         # Loop temporal, resto divisão - entra no loop quando o resto for 1001 - exemplo: resto divisão de 2000 < 1000 = 1000, ou seja, quando for menor que 1000 ele aparece, quando for maior, 1001 ele aparece
+            texto_iniciar = font.render("Pressione Espaço", True, BRANCO)
+            texto_iniciar_rect = texto_iniciar.get_rect(center=(largura // 2, 450))
+            screen.blit(texto_iniciar, texto_iniciar_rect)
+            
+        pygame.display.flip()                       
+
+menu_principal()
+
 # Loop infinito
-rodando = True
 while rodando:
     for event in pygame.event.get():    
         if event.type == pygame.QUIT:   # Verifica se o evento é clicado para fechar a janela
@@ -91,10 +124,10 @@ while rodando:
         print(f"Score PC: {score_pc}")
 
     # Movendo a raquete do pc pra seguir a bola
-    #if pc_y < bola_y:                           # Se o centro da raquete abaixo do centro da bola
-    #    pc_y += raquete_pc_dy                   # Movimenta a raquete pra baixo
-    #elif pc_y + raquete_altura // parte_raquete_x  > bola_y:  
-    #    pc_y -= raquete_pc_dy                   # Movimenta a raqueta para cima
+    if pc_y < bola_y:                           # Se o centro da raquete abaixo do centro da bola
+        pc_y += raquete_pc_dy                   # Movimenta a raquete pra baixo
+    elif pc_y + raquete_altura // 2 > bola_y:  
+        pc_y -= raquete_pc_dy                   # Movimenta a raqueta para cima
 
     # Deixando o player 1 jogando de forma automática
     #if player_1_y + raquete_altura // parte_raquete_y  < bola_y:
@@ -118,6 +151,14 @@ while rodando:
         player_1_y = 0
     elif player_1_y > altura - raquete_altura:
         player_1_y = altura - raquete_altura
+
+    # Mostrando o Score do jogo
+    font_score = pygame.font.Font(font_file, 12)  
+    score_texto = font_score.render(f"Score PC: {score_player_1}  Score Player: {score_pc}", True, BRANCO)
+
+    score_rect = score_texto.get_rect(center=(largura // 2, 24))    
+
+    screen.blit(score_texto, score_rect)
 
     # Assets (objetos)
     pygame.draw.rect(screen, BRANCO, (pc_x, pc_y, raquete_largura, raquete_altura))
