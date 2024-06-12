@@ -3,7 +3,7 @@ import sys
 from MecMovimento import MovendoTexto           # from = olha o arquivo MecMovimento e importa a Classe MovendoTexto
 
 class Game:
-    def __init__(self):             # Self signica que é dele mesmo
+    def __init__(self):             # Self signica que é dele mesmo, construir os atributos que vai utilizar na estrutura
         pygame.init()
         self.largura = 800          # Define a largura da tela do game
         self.altura = 600           # Define a altura da tela do game

@@ -1,7 +1,20 @@
 {
 	"folders": [
 		{
+			"name": "CG",
 			"path": "."
+		},
+		{
+			"name": "Aula 3 - Mineração",
+			"path": "../Aula 3 - Mineração"
+		},
+		{
+			"name": "Aula 4",
+			"path": "../Aula 4"
+		},
+		{
+			"name": "Projeto",
+			"path": "../Projeto"
 		}
 	],
 	"settings": {}

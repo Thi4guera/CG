@@ -2,7 +2,7 @@ import pygame
 import random
 
 class MovendoTexto:     # <- Criação de uma classe, obrigatoriamente precisa de __ dois underlines
-    def __init__(self, texto, fonte_tamanho, largura, altura):          # def = Métodos
+    def __init__(self, texto, fonte_tamanho, largura, altura):          # def = Métodos, inicializa os atributos
         self.fonte = pygame.font.SysFont(None, fonte_tamanho)   # Define o tipo da fonte, o tamanho e o estilo
         self.texto = texto         # Define o texto da Janela                         # Self = Atributos/Parâmetros
         self.largura = largura     # Define a largura da Janela     
@@ -17,7 +17,7 @@ class MovendoTexto:     # <- Criação de uma classe, obrigatoriamente precisa d
 
     def gerar_numero_nao_zero(self):            # Criação do método (gerar_numero_nao_zero) número aleatório não nulo
         numero = 0          # Variável iniciliazada como zero
-        while numero == 0:  # Enquanto o número o numero gerado for zero, continue gerando
+        while numero == 0:  # Enquanto o número gerado for zero, continue gerando
             numero = random.randint(-1, 1)  # Roda um número aleatório entre -1 e 1
         return numero       # Retorna o número gerado
 
