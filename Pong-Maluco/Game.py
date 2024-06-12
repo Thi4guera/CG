@@ -27,6 +27,8 @@ mixer.music.load("Pong-Maluco/audio/jailbreak.mp3")     # Carrega o diretório d
 mixer.music.play(-1)    # Toca a música em loop infito
 mixer.music.set_volume(0.05)    # Define o volume da música para 0.05
 
+sound = mixer.Sound("Pong-Maluco/audio/Sound_A.wav")
+
 clock = pygame.time.Clock()     # Criação do objeto clock
 
 running = False     # Indica se o jogo está em execução
@@ -98,6 +100,7 @@ def game_loop():    # Loop do jogo
             if bola.rect.colliderect(pc_racket.rect) or bola.rect.colliderect(player_racket.rect):
                 bola.bounce('x')
                 bola.change_color()
+                sound.play()
 
             # Colisão da bola com as bordas da tela
             if bola.rect.top <= 0 or bola.rect.bottom >= height:
